@@ -31,9 +31,7 @@
   - notifyAll() 은 일시정지 상태의 모든 스레드를 실행대기 상태 복귀
     - 모니터(락)을 얻지 못하였기에 꺠어났다고해서 스레드가 바로 실행되는 것이 아님
 - 참조: https://www.youtube.com/watch?v=cNPMYBlg974
-### 2. 은행 입출금 시스템 mocking
-- 계좌별 입금과 출금 작업은 serial 하게 처리
-- 계좌별 입금과 출금 요청은 concurrent 하게 처리
+### 2. Pub/Sub Model Mocking
 
 
 

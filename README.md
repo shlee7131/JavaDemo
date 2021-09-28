@@ -22,15 +22,16 @@
 
 ## Control
 ![img.png](src/res/thread_state.png)
-### 1. wait hands on
+### 1. wait() hands on
 - SharedData 객체에 대해 각각 3개의 멀티 스레드를 활용한 쓰기 및 읽기
-- 데이터의 읽기/쓰기 가능 여부를 저장
-  - 스레드가 실행가능할 때까지 busy waiting(while 무한 루프)
+  - 데이터의 읽기/쓰기 가능 여부를 저장
+    - 스레드가 실행가능할 때까지 busy waiting(while 무한 루프)
 - 접근 가능 여부를 확인 후 wait 과 notify 활용
-  - wait 은 실행중인 스레드를 일시정지 상태로 만든다
-    - timeout 설정 또는 notify 에 의해 실행대기 상태 복귀
-  - notifyAll() 은 일시정지 상태의 모든 스레드를 실행대기 상태 복귀
-    - 모니터(락)을 얻지 못하였기에 꺠어났다고해서 스레드가 바로 실행되는 것이 아님
+  - **wait() 은 synchronized 블록 내부에 존재해야 한다**
+  - **wait() 은 실행중인 스레드를 일시정지 상태**로 만든다(+ Lock 반환)
+    - timeout 설정에 의해 또는 notify 에 의해 실행대기 상태 복귀
+  - **notifyAll() 은 일시정지 상태의 모든 스레드를 실행대기 상태 복귀**
+    - 깨어났다고해서 **모니터(락)을 얻지 못하였기에 스레드가 바로 실행되는 것이 아님**
 - 참조: https://www.youtube.com/watch?v=cNPMYBlg974
 ### 2. Pub/Sub Model Mocking
 

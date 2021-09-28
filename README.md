@@ -21,6 +21,7 @@
   - _"결과 + 추론 + 결론"_  
 
 ## Control
+![img.png](src/res/thread_state.png)
 ### 1. wait hands on
 - SharedData 객체에 대해 각각 3개의 멀티 스레드를 활용한 쓰기 및 읽기
 - 데이터의 읽기/쓰기 가능 여부를 저장
